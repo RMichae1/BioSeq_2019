@@ -1,0 +1,323 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			  <!-- Slide 0 -->
+			  <section data-background="https://media.giphy.com/media/1FE5mo715G4eiNPSEm/giphy.gif" data-markdown>
+			    <textarea data-template>
+			    ### About Probabilities and Models
+			    </textarea>
+			  </section>
+
+			  <!-- Slide 1 -->
+			  <section data-markdown>
+			    <textarea data-template>
+			    ### Nomenclature
+
+			    <script type="math/tex; mode=display">
+			      \begin{align*}
+			       &\Omega \\
+			      \{\omega_1, \omega_2, ..., \omega_n\} &\in \Omega \textit{ for } n\in\mathbb{N} \\
+			      \mathcal{P}&=\{\varnothing, \omega_1, \omega_2, ..., \omega_n \}\\
+			      \\
+			      \end{align*}\\
+			      \{X_1, X_2, ..., X_n\} 
+			      </script>
+			    </textarea>
+			  </section>
+			  
+			  <!-- Slide 2 -->
+			  <section>
+			    <img border="0" src="./images/Probability_Space_0_GRAY.png"></img>
+			  </section>
+
+			  <!-- Slide 3 -->
+			  <section>
+			    <img src="./images/Probability_Space_GRAY.png"></img>
+			  </section>
+			  
+			  <!-- Slide 4 -->
+			  <section>
+			    <img src="./images/Probability_Space_random_var_GRAY.png"></img>
+			  </section>
+
+			  <!-- Slide 5 -->
+			  <section>
+			    <img src="./images/PS_var_assign_GRAY.png"></img>
+			  </section>
+
+			  <!-- Slide 6 -->
+			  <section data-markdown>
+			    <textarea data-template>
+			    What is a Probability?
+			    <script type="math/tex; mode=display">
+			      \mathbb{P}(X):\mathcal{P}(\Omega) \rightarrow \mathbb{R}\\
+			      \textit{with the Properties:} \\
+			      0\leq\mathbb{P}(X)\leq 1\\
+			      \mathbb{P}(\Omega)=1 \\
+			      \mathbb{P}(X_1\vee X_2\vee ... \vee X_n)=\mathbb{P}(X_1)+\mathbb{P}(X_2)+...+\mathbb{P}(X_n)
+			      </script>
+			    </textarea>
+			  </section>
+			  
+			  <!-- Slide 6.2 -->
+			  <section>
+			      <h3> What is a Probability?</h3>
+			      <p><b>important</b> properties: Joint Probability, Marginal Probability</p>
+			      <p>given i.i.d.</p>
+			    <script type="math/tex; mode=display">
+			      \mathbb{P}(X_1,X_2)=\mathbb{P}(X_1|X_2)\mathbb{P}(X_2) \\
+			      \mathbb{P}(X)=\sum_Y\mathbb{P}(X,Y)\\
+			      </script>
+			  </section>
+
+			  <!-- Slide 7 -->
+			  <section>
+			    <img src="./images/dist_fast.gif"></img>
+			  </section>
+			  
+			  <!-- Slide 8 -->
+			  <section>
+			    <img src="./images/distrib3.gif"></img>
+			  </section>
+			  
+			  <!-- Slide 9 -->
+			  <section>
+			    <section>
+			    <h3>Example Distributions </h3>
+			    <img src="./images/norm_dist.png"></img>
+			    <script type="math/tex; mode=display">
+			      \tiny{f(u)=\frac{1}{\sqrt{2\pi}}\exp{(\frac{-u^2}{2}})} \textit{ with } \tiny{u=\frac{(k-m)}{\sigma}=\frac{(k-Np)}{\sqrt{Np(1-p)}}}
+			      </script>
+			    </section>
+			    <section>
+			    <h3>Example Distributions </h3>
+			    <img src="./images/chi_dist.png"></img>
+			    <script type="math/tex; mode=display">
+			      \tiny{f(x;k)=\frac{1}{2^{\frac{k}{2}-1}}\Gamma(\frac{k}{2})} \textit{ for } x\geq0
+			      </script>
+			    </section>
+			    <section>
+			    <h3>Example Distributions </h3>
+			    <img src="./images/gamma_dist.png"></img>
+			    <script type="math/tex; mode=display">
+			      \tiny{g(x,\alpha,\beta)=\frac{e^{\beta x} x^{\alpha-1} \beta^\alpha}{\Gamma(\alpha)}}
+			      </script>
+			    </section>
+			  </section>
+			  
+			  <!-- Slide 10 -->
+			  <section >
+			    <h3>The Finite State Automaton</h3>
+			    <img src="./images/FSA.png"></img>
+			    <script type="math/tex; mode=display">
+			      \{\Sigma, \delta, Q, S, E\}
+			      </script>
+			  </section>
+			  
+			  <!-- Slide 11 -->
+			  <section >
+			    <h3>The Finite State Automaton</h3>
+			    <img src="./images/FSA.png"></img>
+			    <p>I this a Markov Model already?</p>
+			  </section>
+			  
+			  <!-- Slide 12 -->
+			  <section>
+			  <section>
+			    <h3>The First Model</h3>
+			    <img src="./images/ACGT_MM.png"></img>
+			    <p>Markov Chain over<b> states</b>: <i>X</i></p>
+			    <p>every state has <b>emissions</b>: <i>e</i> </p>
+			    <p>every state has <b>transitions</b>: <i>a</i></p>
+			    <p>such that,</p>
+			  </section>
+			  <section>
+			    <h3>The First Model</h3>
+			      <script type="math/tex; mode=display">
+				\begin{align*}
+				a_{st}=\mathbb{P}(x_i=t|x_{i-1}=s) \\
+				\mathbb{P}(X,\pi)=a_{0\pi_1}\prod_{i=1}^L e_{\pi_i}(x_i)a_{\pi_i \pi_{i+1}} 
+				\end{align*}
+			      </script>
+			  </section>
+			  
+			  <!-- Slide 13 -->
+			  <section>
+			      <p>Given a Sequence with Transition Probabilities:</p>
+			      <script type="math/tex; mode=display">
+				\begin{align*}
+				X &= x_1, x_2, x_3, ..., x_n \\
+				&\textit{for } n \in \mathbb{N} \\
+				\mathbb{P}(X)&=\mathbb{P}(x_n|x_{n-1})\mathbb{P}(x_{n-1}|x_{n-2})...\mathbb{P}(x_1)\\
+    &=\mathbb{P}(x_1)\prod_{i=2}^n a_{x_{i-1}x_i}\\
+			\end{align*}
+			      </script>
+			  </section>
+			  <!-- Slide 13.5 -->
+			  <section>
+			    <h3>A Complex Model</h3>
+			    <img src="./images/complex_model.png"></img>
+			  </section>
+			  </section>
+
+			  <!-- Slide 14 -->
+			  <section data-background="https://media.giphy.com/media/2TnVVugwBiSTm/giphy.gif" >
+			    <script type="math/tex; mode=display">\Huge\theta</script>
+			  </section>
+			  
+			  <!-- Slide 15 -->
+			  <section>
+			    <p>Now that we have a Model - what?</p>
+			    <p><b>Remember:</b> we want something that </p>
+			    <script type="math/tex; mode=display">\Large\max\mathbb{P}(D|\theta)</script>
+			    </section>
+			  
+			  <!-- Slide 16 -->
+			  <section>
+			  <section id="fragments">
+			    <p><b>Training</b> a model:</p>
+			    <p class="fragment grow"> Maximum Likelihood (<b>ML</b>)</p>
+			    <p class="fragment grow"> Maximum aposteriori estimation (<b>MAP</b>) </p>
+			    </section>
+
+			  <!-- Slide 17 -->
+			    <section>
+			    <img src="./images/ML_MAP.png"></img>
+			    <script type="math/tex; mode=display">
+			      \theta^{ML}=\textit{argmax}_{\theta}P(D|\theta, M).
+			    </script>
+			    </section>
+			  </section>
+
+			  <!-- Slide 18 -->
+			  <section data-background="https://media.giphy.com/media/fTtej9qvEo4DAkREPH/source.gif">
+			   <h3>Finding a Path</h3>
+			   <it>Decoding</it>
+			    </section>
+
+			  <!-- Slide 19 -->
+			  <section>
+			   <h3>Finding a Path</h3>
+			   <p>Viterbi</p>
+			   <p>Forward Backward</p>
+			   </section>
+			  
+			  <section>
+			  <!-- Slide 20 -->
+			    <section>
+			      <h3>Finding a Path</h3>
+			      <p><b>Viterbi</b></p> 
+			      <p>Finding a path<p>
+				<script type="math/tex; mode=display">
+			      \pi^*=\textit{argmax}_{\pi}\mathbb{P}(X,\pi)
+				</script>
+			    </section>
+			  
+			    <!-- Slide 21 -->
+			    <section>
+			      <h3>Finding a Path</h3>
+			      <p><b>Viterbi</b></p> 
+				<script type="math/tex; mode=display">
+				  V_l(i+1)=e_l(x_{i+1})\max_k(V_k(i)a_{kl})
+				</script>
+			    </section>
+
+			    <!-- Slide 22 -->
+			    <section>
+			      <h3>Finding a Path</h3>
+			      <p><b>Viterbi</b></p> 
+			      <p>recursive formulation for sequence of length L:</p> 
+				<script type="math/tex; mode=display">
+				  {\tiny
+				   \begin{align*}
+				  (i=0):& v_0(0)=1, v_k(0)=0, \textit{  for }k\geq 0\\
+				  (i=1,...,L):& V_l(i+1)=e_l(x+1)\max_k(V_k(i-1)a_{kl});\\
+    &\textit{ptr}_i(l)=\textit{argmax}_k(v_k(i-1)a_{kl}) \\
+				  \textit{Term: } &\mathbb{P}(X,\pi^*)=\max_k(V_k(L)a_{k0});\\
+    &\pi_L^*=\textit{argmax}_k(V_k(L)a_{k0})\\
+				  (i=L...1): &\pi^*_{i-1}=\textit{ptr}_i(\pi_i^*).
+				   \end{align*}
+				  }%
+				</script>
+			    </section>
+			   </section>
+			  <section>
+			    <section>
+			      <h3>Finding a Path</h3>
+			      <p><b>Forward Backward</b></p> 
+			      <p>Finding a path<p>
+				<script type="math/tex; mode=display">
+				  \mathbb{P}(X)=\sum_\pi\mathbb{P}(X,\pi)\\
+				  f_k(i)=\mathbb{P}(X_1,...,X_i|\pi_i=k)\\
+				  b_k(i)=\mathbb{P}(X_{i+1},...,X_L|\pi_i=k)
+				</script>
+			    </section>
+			    <section>
+			      <h3>Finding a Path</h3>
+			      <p><b>Forward Backward</b></p> 
+			      <p>recursive formulation for sequence of length L:</p> 
+				<script type="math/tex; mode=display">
+				  {\tiny
+				   \begin{align*}
+				   \textit{i=0}:&f_0(0)=1, f_k(0)=0 \textit{  for k>0}\\
+				   &b_k(L)a_{k0}\\
+				   \textit{i=1...L}: &f_l(i)=e_l(X_i)\sum_k f_k(i=1)a_{kl}\\
+				   \textit{i=L-1,...,1}: &b_k(i)=\sum_l a_{kl}e_l(X_{i+1})b_l(i+1)\\
+				   \textit{Term: }&\mathbb{P}(X)=\sum_kf_k(L)a_{k0}\\
+				   &\mathbb{P}(X)=\sum_l a_{0l}e_l(X_1) b_l(1).
+				   \end{align*}
+				  }%
+				</script>
+			    </section>
+			   </section>
+			  
+			    <section>
+			      <h3>Thanks and Good Luck!</h3>
+			      <img src="./images/frequentists_vs_bayesians.png"></img>
+			    </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+			    dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true },
+				{ src: 'plugin/math/math.js', async: true}
+				]
+			});
+		</script>
+	</body>
+</html>
