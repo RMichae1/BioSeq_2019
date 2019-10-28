@@ -54,7 +54,8 @@ def pretty_print(seq_list, pos_list):
 
 if __name__ == "__main__":
     mirna_seq = read_sequence(miRNA_FILENAME)
-    mirna_complement_seq = invert_seq(mirna_seq)
+    # miRNA is the reverse complement 3'-5'
+    mirna_complement_seq = invert_seq(mirna_seq)[::-1]
 
     # binding between 2nd and 16th position:
     short_mirna_complement_seq = mirna_complement_seq[1:16]
