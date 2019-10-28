@@ -59,9 +59,9 @@ if __name__ == "__main__":
     # binding between 2nd and 16th position:
     short_mirna_complement_seq = mirna_complement_seq[1:16]
 
-    print("Complete miRNA160:")
+    print("Complete miRNA160 complement:")
     print(mirna_complement_seq)
-    print("miRNA160 pos.2-16:")
+    print("miRNA160 pos.2-16 complement:")
     print(short_mirna_complement_seq)
     
     rna_seq = read_sequence(RNA_FILENAME)
